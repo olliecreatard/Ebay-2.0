@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editable Selection Demo</title>
+  <title>Selection Demo</title>
   
   <link rel="stylesheet" href="mystyle.css" />
 
   <style>
-    /* OPTIONAL: Basic styling to make the buttons look good immediately */
     .button-row {
       display: flex;
       gap: 15px;
@@ -21,12 +20,10 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      cursor: pointer;
+      font-family: sans-serif;
     }
-    h1 {
-      border-bottom: 2px dashed #ccc; /* Shows that it is editable */
-      padding-bottom: 5px;
-      min-height: 40px; /* Ensures you can click it even if empty */
+    .button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -34,7 +31,7 @@
 <body>
 
   <header>
-    <h1 contenteditable="true">[ Click Here to Edit This Title ]</h1>
+    <h1>CHANGE THIS TEXT TO WHATEVER YOU WANT</h1>
     
     <nav>
       <a href="#">Home</a>
