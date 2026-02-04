@@ -1,21 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FREE ROBUX AND V-BUCKS</title>
-
-  <!-- Link to external CSS file -->
+  <title>HTML + CSS Demo</title>
   <link rel="stylesheet" href="mystyle.css" />
 </head>
 
 <body>
 
   <header>
-    <h1>FREE ROBUX AND V-BUCKS</h1>
-    <p>100% FREE AND EASY</p>
-
+    <h1>Demo Website</h1>
+    <p>HTML linked to an external CSS file</p>
     <nav>
       <a href="#">Home</a>
       <a href="#">Page One</a>
@@ -25,10 +21,7 @@
 
   <main>
     <h2>Why Use External CSS?</h2>
-    <p>
-      This page demonstrates how an HTML file can link to an external
-      stylesheet using the <code>&lt;link&gt;</code> tag.
-    </p>
+    <p>This page demonstrates how an HTML file can link to an external stylesheet.</p>
 
     <h2>Example List</h2>
     <ol>
@@ -36,17 +29,32 @@
       <li>External CSS</li>
       <li>Separation of content and style</li>
     </ol>
- <div class="button-row">
+
+    <div class="button-row">
       <a class="button" href="#">Demo Button</a>
     </div>
   </main>
 
-
   <footer>
-    <p>ThIs WEbSiTe Is ApPROved bY EpIC GaMES AnD RoBlOx</p>
+    <p>Demo Page © 2026</p>
   </footer>
-<script src="Olliecantcode1.js"> </script>
+
+  <script>
+  
+    const btn = document.querySelector('.button');
+
+
+    btn.onclick = function(event) {
+      event.preventDefault(); 
+    
+      let username = prompt("Please enter your username:");
+      
+  
+      if(username) {
+        console.log("User typed: " + username);
+      }
+    };
+  </script>
+
 </body>
 </html>
-
-
