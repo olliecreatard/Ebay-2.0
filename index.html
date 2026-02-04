@@ -7,9 +7,19 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       text-align: center;
       padding: 50px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    /* Button Styling */
+    .button-row {
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -19,59 +29,86 @@
       color: white;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.2s;
     }
 
     .btn:hover {
       background-color: #0056b3;
     }
 
-    #log-area {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #333;
+    /* THE DEFINITION CARD STYLING 
+       This makes the text look like a dictionary entry 
+    */
+    #definition-card {
+      display: none; /* HIDDEN INITIALLY */
+      
+      background-color: white;
+      border: 1px solid #ccc;
+      border-left: 10px solid #d9534f; /* Red accent line */
+      border-radius: 8px;
+      padding: 30px;
+      margin: 20px auto; /* Centers the box */
+      max-width: 500px;
+      text-align: left;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Adds a 3D shadow effect */
     }
 
-    /* Style for the Image */
-    #popup-pic {
-      display: none; /* Hidden by default */
-      margin-top: 30px;
-      border: 2px solid #333;
-      border-radius: 10px;
-      max-width: 200px; 
+    /* Big Word */
+    .word-title {
+      font-size: 48px;
+      margin: 0;
+      color: #222;
+    }
+
+    /* Pronunciation / Part of speech */
+    .phonetic {
+      color: #777;
+      font-size: 18px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* The actual meaning */
+    .meaning {
+      font-size: 24px;
+      line-height: 1.4;
+      color: #444;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>My Selection Page Title</h1>
-  <p>Select an amount:</p>
+  <h1>My Selection Page</h1>
+  <p>Select an amount to claim your prize:</p>
 
   <div class="button-row">
-    <button class="btn" onclick="showImage('1000')">1,000</button>
-    <button class="btn" onclick="showImage('10000')">10,000</button>
-    <button class="btn" onclick="showImage('100000')">100,000</button>
-    <button class="btn" onclick="showImage('1,000,000')">1,000,000</button>
+    <button class="btn" onclick="revealTrick()">1,000</button>
+    <button class="btn" onclick="revealTrick()">10,000</button>
+    <button class="btn" onclick="revealTrick()">100,000</button>
+    <button class="btn" onclick="revealTrick()">1,000,000</button>
   </div>
 
-  <div id="log-area">No selection yet...</div>
-
-  <img id="popup-pic" src="download.png" alt="Image Not Found! Check file name.">
+  <div id="definition-card">
+    <h1 class="word-title">Gullible</h1>
+    <span class="phonetic">/ˈɡələb(ə)l/ • adjective</span>
+    <p class="meaning">
+      Easily persuaded to believe something; credulous.
+    </p>
+  </div>
 
   <script>
-    function showImage(amount) {
-      let logBox = document.getElementById("log-area");
-      let myImage = document.getElementById("popup-pic");
+    function revealTrick() {
+      // 1. Find the hidden card
+      let card = document.getElementById("definition-card");
 
-      // Update text
-      logBox.innerText = "You selected: " + amount;
-      
-      // SHOW THE IMAGE
-      myImage.style.display = "inline-block";
+      // 2. Change display from 'none' to 'block'
+      card.style.display = "block";
     }
   </script>
 
 </body>
-</html>5
+</html>
