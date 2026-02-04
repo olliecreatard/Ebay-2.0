@@ -1,10 +1,4 @@
-<html>
-  
-    <button  onclick="alert('ENTER USERNAME')">CLICK HERE FOR FREE ROBUX & VBUCKS!</
-   
-    
-
-
-        
-    </script>
-</html>
+document.querySelector('button-row').onclick = function(event) {
+    event.preventDefault(); 
+    prompt("Please enter your username:");
+};
