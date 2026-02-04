@@ -1,22 +1,27 @@
-// 1. Select all elements that have the class 'button'
-const buttons = document.querySelectorAll('.button');
+// This line forces the script to wait until the HTML is loaded
+document.addEventListener('DOMContentLoaded', function() {
 
-// 2. Loop through each button and add a click listener
-buttons.forEach(function(btn) {
-    btn.addEventListener('click', function(event) {
-        
-        // Stop the page from jumping to the top
-        event.preventDefault();
+    // 1. Select all elements with the class 'button'
+    const buttons = document.querySelectorAll('.button');
 
-        // Get the specific number from the button's "data-amount" attribute
-        let amount = btn.getAttribute('data-amount');
+    // 2. Loop through each button to add the click logic
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function(event) {
+            
+            // Stop the link from jumping to the top of the page
+            event.preventDefault();
 
-        // Prompt the user for their username
-        let username = prompt("You selected " + amount + ".\nPlease enter your username:");
+            // Read the specific number from the HTML (data-amount="...")
+            let amount = btn.getAttribute('data-amount');
 
-        // Check if they typed something
-        if (username) {
-            alert("Confirmed!\nUser: " + username + "\nAmount: " + amount);
-        }
+            // Prompt the user
+            let username = prompt("You selected " + amount + ".\nPlease enter your username:");
+
+            // Check if they typed something
+            if (username) {
+                alert("Success!\nUser: " + username + "\nAmount: " + amount);
+            }
+        });
     });
+
 });
