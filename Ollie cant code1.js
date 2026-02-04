@@ -1,4 +1,4 @@
-document.querySelector('button-row').onclick = function(event) {
-    event.preventDefault(); 
-    prompt("Please enter your username:");
-};
+<div class="button-row">
+  <a class="button" href="#" onclick="prompt('Enter your username:')">Demo Button</a>
+</div>
+  </main>
